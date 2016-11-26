@@ -1,0 +1,530 @@
+// Skins:
+// NL
+// Doge
+// DogeX
+// leafy
+// bumie
+// more skins at cellcraft.io/skins
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+
+    <meta name="description" content="Play CellCraft | The Agar alternative game server. The best game with cool features. Eat small cells and get in the top 10 with mass. Great community and chat.">
+    <meta http-equiv="content-language" content="en">
+    <meta name="keywords" content="Agario Private Server, agar.io play game, agario online server, free agar modded game, cells, virus, petridish, bacteria, blob, game, games, web game, agario forums, agar.io community, clan wars, agar.io team tournament, fun, flash mobile">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--<meta property="fb:app_id" content="677505792353827">-->
+    <meta property="og:title" content="Play Cell Craft | Best Private Server">
+    <meta property="og:description" content="Play Cell Craft - The best game on the market. Chat and play against friends, find your team and destroy lobbies with your clan. Eat cells smaller than you and dont get eaten by the bigger ones. Mobile friendly">
+    <meta property="og:url" content="index.html">
+    <meta property="og:image" content="http://cellcraft.io/img/1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <title>Cellcraft Reborn</title>
+    <link id="favicon" rel="icon" type="image/png" href="Circle_Blue.ico">
+<!-- /// -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- /// -->
+    <style type="text/css" media="all">
+        @import "css/main-min.css";
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 700;
+          src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(http://fonts.gstatic.com/s/ubuntu/v8/0ihfXUL2emPh0ROJezvraFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+        }
+    </style>
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-2.1.3.min.js"><\/script>')</script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/AdvertBootStrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vector2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/gameclient.js?version=9" type="text/javascript" charset="utf-8"></script>
+     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    // Tooltip only Text
+    $('.masterTooltip').hover(function(){
+            // Hover over code
+            var title = $(this).attr('title');
+            $(this).data('tipText', title).removeAttr('title');
+            $('<p class="tooltipz"></p>')
+            .text(title)
+            .appendTo('body')
+            .fadeIn('slow');
+    }, function() {
+            // Hover out code
+            $(this).attr('title', $(this).data('tipText'));
+            $('.tooltipz').remove();
+    }).mousemove(function(e) {
+            var mousex = e.pageX + 20; //Get X coordinates
+            var mousey = e.pageY + 10; //Get Y coordinates
+            $('.tooltipz')
+            .css({ top: mousey, left: mousex })
+    });
+    });
+    </script>
+
+<body>
+
+<!-- // Welcome DIV Login / Server Sellect // -->
+<div id="overlays" style="position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; opacity: 1; z-index: 200; display: block; background-attachment: initial; background-color: rgba(0, 0, 0, 0.2); background-size: 100% 100%; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: no-repeat; background: #465458; background-image: radial-gradient(circle, rgb(31, 97, 156) 0%, rgb(7, 21, 41) 100%);">
+<div id="centerLogo">
+</div>
+<div id="helloDialog" style="transform: translate(-50%, -50%) scale(1.0);">
+<img id="ContinentDisplay" src="http://cellcraft.io/img/NA2.png" width="300" height="100" border="0" class="masterTooltip" title="Europe or North America server" style="
+    position: absolute;
+    width: 60px;
+    height: 26px;
+    margin-top: 0px;
+    margin-left: 314px;
+">
+<div id="gamemodeselect" style="/* width: 430px; */position: absolute;margin-left: 14%;margin-top: -10%;">
+  <div style="position: absolute;top: -70%;font-size: 30px;left: 44%;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);text-shadow: rgb(3, 3, 3) 4px 4px 4px;"><h2>CellCraft<font color="lightgreen">+</font></h2></div>
+  <!--<img src="/img/cell_arrow.png" style="
+    position: absolute;
+    width: 50px;
+    margin-left: 220px;
+    margin-top: 20px;
+    opacity: 0.8;">-->
+  <div id="GMSelectRemove" onclick="getGameMode('remove');return false;" style="cursor:pointer;width:60px;height:60px;float:left;">
+    <img src="http://cellcraft.io/img/arrow_left.png" width="60" height="60" border="0" style="margin-top: 34px; width: 30px; height: 27px;">
+</div>
+<img id="GameDisplay" src="http://cellcraft.io/img/craft2.png" width="300" height="100" border="0" class="masterTooltip" title="Server selected" style="
+    width: 150px;
+    height: 38px;
+    margin-top: 27px;
+    margin-right: 4px;
+    margin-left: -21px;
+">
+<div id="GMSelectAdd" onclick="getGameMode('add');return false;" style="cursor:pointer;width:60px;height:60px;float:right;">
+<img src="http://cellcraft.io/img/arrow_right.png" width="60" height="60" border="0" style="margin-top: 34px; width: 30px; height: 27px;">
+</div>
+</div>
+
+<div id="connecting" style="display: none; margin-bottom: -30px; margin-top: 160px;">
+    <div style="width: 320px;">
+        <center>
+            <h4>Oops</h4>
+            <p>Server is full, or your IP may have accidentally been blocked as spam. To unblock, click <a href="http://cellcraft.io/unblock">here</a><br> Unblock takes about 1 hour to 12 hours.</p>
+<!-- ///            <a href="#"><img src="img/refresh.png"></a> -->
+            <a href="#" onclick="location.reload(true);"><img src="http://cellcraft.io/img/refresh.png"></a>
+        </center>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="form-group has-error">
+<!-- /// -->
+        <br clear="both">
+<!-- /// -->
+        <center>
+    <div class="taho" id="nick_holder" style="width: 244px; margin-top: 34px; box-shadow: rgb(0, 0, 0) 0px 6px 50px; opacity: 1; background: rgb(76, 68, 124);">
+         <input class="sumsginp" id="nick" style="width: 220px; height: 24px;" placeholder="Nickname" maxlength="24">
+   </div>
+            <!--<input id="nick" class="form-control" style="width: 60%;float: inherit;" placeholder="Nick" maxlength="16">-->
+        </center>
+    </div>
+
+
+</div><font color="Green">
+    <div class="form-group">
+<!--<script async='' charset='utf-8'>setserver('104.238.174.185:4042')</script>-->
+       <!--<select onchange="setserver($(this).val());" class="btn btn-danger btn-primary" style="width: 36%; margin-left:2%; float:right;" id="agarios">
+             <option disabled="" value="" selected="">Server</option><option selected="" value="104.27.158.109:4411" location="" sname="" modenumber="" online="" connectlimit="" mode="" map="" food="" id="104.27.158.109:4411" alt="Global">FFA</option>
+            <option value="104.27.158.109:4412" location="" sname="" modenumber="" online="" connectlimit="" mode="" map="" food="" id="104.27.158.109:4412" alt="CellCraft.io">TEAM</option>
+        </select
+        <br clear="both">-->
+    </div>
+<!--<div id="main-ads" class="main-bottom" style="position:absolute;margin-top: 180px; border-top: 5px; margin-left: -13px;color: rgb(255, 255, 255);width: 350px;height: 320px;margin-left;20px;margin-right: 10px;text-align: center;border-radius: 10px;background-color: rgb(76, 68, 124);border: solid 2px rgba(255,255,255,.2);box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.52);display: inline-block;vertical-align: top;">
+    <p style="font-size: 10px; color: #41b987;">Advertisement</p>
+    <div id="inner-rb" style="margin-top: 7px;">
+    </div>
+</div>-->
+    <div>
+        <div class="text-muted region-message GB-Londen">
+    </div>
+</div>
+
+<center>
+    <div class="form-group">
+    <button type="submit" id="playBtn" onclick="setNick(document.getElementById('nick').value); return false;" class="btn btn-play btn-primary btn-needs-server" style="">Play</button>
+<br>
+        <div style="color:#41B987">
+            <script>
+            setSmooth(true);
+           // setDarkTheme(false);
+            // window.onload = function(){
+                //time is set in milliseconds
+           // };
+            setHideCellBorders(true);
+            setHideMap(false);
+            //$('#minimap').show();
+            </script>
+                     <label><input id="cCellBorders" name="hidecellborder" type="checkbox" onchange="setHideCellBorders($(this).is(':checked'));" checked="">(AntiLagg)No Cell Borders</label>
+                    <label><input id="cDark" type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"> Dark Theme</label>
+                    <label><input id="cZoom" type="checkbox" onchange="setZoom($(this).is(':checked'));">Zoom++</label>
+                    <label><input id="cGrid" type="checkbox" onchange="setHideGrid($(this).is(':checked'));"> Hide Grid</label>
+               </div>
+
+      
+<button onclick="$('#settings, #instructions').toggle();return false;" class="btn btn-info btn-settings"><i class="glyphicon glyphicon-cog"></i></button>
+<br clear="both">
+
+</div>
+<div id="centerLogo">
+<div id="centerLogo">
+    <div style="position: absolute;top: 87%;left:-52%;color: #f04b4b;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);text-shadow: rgb(3, 3, 3) 4px 4px 4px;">
+  <p>CellCraft Reborn <br>      v1.0        </p>
+</div>
+</div>
+
+</div>
+</center>
+
+<br>
+<br>
+<p style="position: absolute; margin-left: 409px; left: -20px; right: -338px; margin-top: -48px; text-align: center; color: rgba(0, 0, 0, 0.81);"</a>
+</p>
+<div id="settings" class="checkbox" style="display: none; margin-top: -121px; margin-left: 35px; position: absolute;"Cellcraft Reborn by SuiX">
+    <div class="form-group" action="#">
+        <center>
+          <button id="spectateBtn" onclick="spectate(); return false;" class="btn btn-warning btn-spectate btn-needs-server" style="margin-left:0%; margin-bottom: -38px;">Spectate</button>
+<br><br>
+       <!-- <button id="spectateBtn" onclick="spectate(); return false;" class="btn btn-warning btn-spectate btn-needs-server" style="margin-left:2%;">Spectate</button>-->
+       <!-- <div style="margin: 6px; position:absolute; color:#41B987">
+                    <label><input type="checkbox" onchange="setSmooth($(this).is(':checked'));">Anti Lagg</label>
+                    <label><input type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"> Dark Theme</label>
+                    <label><input type="checkbox" onchange="setSkins(!$(this).is(':checked'));"> No skins</label>
+                    <br>
+                    <label><input type="checkbox" onchange="setNames(!$(this).is(':checked'));"> No names</label>
+                    <label><input type="checkbox" onchange="setColors($(this).is(':checked'));"> No colors</label>
+                    <br>
+                    <label><input type="checkbox" onchange="setShowMass($(this).is(':checked'));"> Show mass</label>
+                    <label><input type="checkbox" onchange="setHideChat($(this).is(':checked'));"> Hide chat</label>
+                    <label><input type="checkbox" onchange="setZoom($(this).is(':checked'));">Zoom++</label>
+
+                    <br>
+                    </center>
+                </div>-->
+        <br clear="both">
+
+    </div>
+    <br>
+</div><br>
+
+<br>
+
+
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.cellcraft.io","*.www.cellcraft.io"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//185.114.224.216/AnL/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//185.114.224.216/AnL/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+
+
+
+
+
+
+<!-- About -->
+<!-- News -->
+
+
+<font color="green">
+
+</font></font></div><font color="Green"><font color="green">
+
+<!--<div class="tosBox" id="clock-wrapper" style="opacity: 0.2; z-index: -1;">
+        Powered by <a href="http://ogarproject.com/" target="_blank">OgarProject</a> and <a href="http://jxcore.com/" target="_blank">JXcore</a> - v1.2.1
+</div>-->
+
+</font></font></div>
+
+<font color="Green"><font color="green">
+
+<div style="display: none; background-position: 0px 0px;" class="magic"></div>
+<!-- // FPS Meter addon // -->
+<script src="js/fpsdisplay.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var stats = new Stats();
+    document.body.appendChild( stats.domElement );
+
+    stats.setMode( 0 );
+    setInterval( function () {
+        stats.begin();
+        stats.end();
+    }, 1E3 / 60);
+</script>
+<!--<div id="graphfps" style="width: 80px; opacity: 0.2;"></div>-->
+
+<!-- // High Score Bar // -->
+    
+
+        <!--</tbody></table><font size="-2">Top 20 players of all time (based on score)<br>Updates every five minutes.</font>-->
+    </div>
+</div>
+
+<!-- // Config Bar // -->
+<div id="ayarlr" style="color:white">
+    <a href="#" class="btn" id="ayarlar"><img src="http://cellcraft.io/img/ayr.png" width="25" height="25"></a>
+    <div class="tab-content" style="background: transparent url('img/bgright.png') no-repeat scroll 50% 50%;">
+        <p>Game Settings</p>
+        <label><input id="skinon" type="checkbox" onchange="setSkins(!$(this).is(':checked'));"> No Skins</label>
+        <br>
+        <label><input type="checkbox" onchange="setNames(!$(this).is(':checked'));"> No Names (Reccomended for no lag) </label>
+        <br>
+        <label><input type="checkbox" onchange="setColors($(this).is(':checked'));"> Hide Colors (All Grey) </label>
+        <br>
+        <label><input type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"> Night Mode</label>
+        <br>
+        <label><input type="checkbox" onchange="setShowMass($(this).is(':checked'));"> Show Mass Count</label>
+        <br>
+        <label><input type="checkbox" onchange="setAcid($(this).is(':checked'));"> Acid Mode</label>
+        <br>
+        <label><input type="checkbox" onchange="setHideChat($(this).is(':checked'));"> Hide Chat</label>
+        <br>
+        <label><input id="cMinimap" type="checkbox" onchange="setHideMap($(this).is(':checked'));"> Hide Mini Map</label>
+        <br>
+        <label><input id="loset" type="checkbox" onchange="setSmooth($(this).is(':checked'));"> Smooth Render (Less Lag)</label>
+        <br>
+        <!-- <label><input type="checkbox" onchange="setLargeBlob($(this).is(':checked'));"> Large Blob</label>
+        <br> -->
+        <label><input type="checkbox" onchange="setLargeName($(this).is(':checked'));"> Big Names</label>
+        <br>
+        <label><input type="checkbox" onchange="setVirusTrans($(this).is(':checked'));" checked=""> Transparent Virus</label>
+        <br>
+        <label><input type="checkbox" onchange="setKoseGoster($(this).is(':checked'));" checked=""> Hide Corner Line</label>
+        <br>
+         <label><input id="cGrid" type="checkbox" onchange="setHideGrid($(this).is(':checked'));"> Hide Grid</label>
+        <br>
+         <label><input id="cCellBorders" checked ="" type="checkbox" onchange="setHideCellBorders($(this).is(':checked'));"> Hide Cell Borders</label>
+        <br>
+        <br>
+    </div>
+</div>
+<div id="info">
+<div id="frozenCellOn" style="display: block;">
+    <p style="
+        display: inline;
+    ">Frozen (You) [D]: </p><p style="color: #19ef2b;display: inline;"> On</p><br>
+</div>
+<div id="frozenCellOff" style="display: none;">
+    <p style="
+        display: inline;
+    ">Frozen (You) [D]: </p><p style="color: #f30b0b;display: inline;"> Off</p><br>
+</div>
+<div id="frozenMOn" style="display: block;">
+<p id="FreezeM" style="
+    display: inline;
+">Frozen (Bots) [F]: </p><p style="color: #19ef2b;display: inline;"> On</p><br>
+</div>
+<div id="frozenMOff" style="display: none;">
+<p id="FreezeM" style="
+    display: inline;
+">Frozen (Bots) [F]: </p><p style="color: #f30b0b;display: inline;"> Off</p><br>
+</div>
+</div>
+
+<script>
+/*
+$(document).ready(function(){
+    $("#yt-uix-button-subscribe-branded").click(function(){
+        $("#yt-uix-button-subscribe-branded").hide();
+        console.log('hide, clicked?');
+    });
+    
+     $("#yt-subscribe").click(function(){
+        $("#yt-subscribe").hide();
+        console.log('hide, clicked?2');
+    });
+     $("#subscribe-label").click(function(){
+        $("#g-ytsubscribe").hide();
+        console.log('hide, clicked?');
+    });
+});
+*/
+</script>
+<!-- // Advertisement Area when your cell is eaten  -->
+<div id="advert" style="position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 400; display: none; background: url(&quot;http://cellcraft.io/img/bg_sidebar.gif&quot;) 0% 0% repeat scroll rgba(9, 13, 23, 0.059804);">
+    <div id="scorebox" stylez="width: 100%; height: 730px; background-color: rgba(59, 89, 152, 0.95); box-shadow: 3px 3px 5px #000; margin: 10px 50%; border-radius: 15px; padding: 20px 20px 20px 20px;background-image: url(http://cellcraft.io/img/PannelBG1.png);" style="transform: translate(-50%, -50%) scale(0.497134);">
+        <div id="stats" style="width: 100%; height: 230px; padding: 0px 0px 300px; overflow: hidden;" class="agario-panel">
+            <canvas height="230" width="300" id="statsGraph"></canvas>
+            <div id="statsHighestMassContainer"><span id="statsTextMass" class="stats-highest-mass">847</span><span id="statsSubtext" data-itr="stats_highest_mass">highest mass</span></div>
+            <div id="statsTimeAliveContainer"><span id="statsTextTime" class="stats-time-alive">1:11</span><span id="statsSubtext" data-itr="stats_time_alive">time alive</span></div>
+            <div id="statsPelletsContainer"><span id="statsTextFood" class="stats-highest-mass">231</span><span id="statsSubtext" data-itr="stats_highest_mass">food eaten</span></div>
+            <div id="statsPlayerCellsEatenContainer"><span id="statsTextCell" class="stats-time-alive">3</span><span id="statsSubtext" data-itr="stats_time_alive">cells eaten</span></div>
+        </div>
+        <center>
+            <script src="https://apis.google.com/js/platform.js"></script>
+            <div style=pm2 "margin:-10px;">
+            <div style="position:absolute;margin:-10px;" class="g-ytsubscribe" data-channelid="UCebt69ThNxtKH3v6Ev4JCxg" data-layout="default" data-count="default"></div>
+            </div>
+            <br>
+            <div class="g-plusone" data-annotation="none"></div>
+            <br>
+            <button id="statsContinue" class="btn btn-primary" data-itr="continue" onclick="closeStats();" style="opacity: 0.85;">Continue
+            </button><br>
+            <button type="submit" id="playBtn" onclick="setNick(document.getElementById('nick').value); return false;" class="btn btn-play btn-primary btn-needs-server" style="background-color: #17CF2F;box-shadow: rgb(228, 35, 181) 0px 6px 50px; width: 50%; height: 30%;">This time i'll win <3</button><br>
+            <button id="spectateBtn" onclick="spectate(); return false;" class="btn btn-warning btn-spectate btn-needs-server" style="margin-left:0%; margin-bottom: -38px;">Spectate</button>
+              <!--<img src="img/logo.png" style="width: 300px; margin-top: 67px; opacity: 1.0;"><br><br>-->   
+              <br><br><br>  
+
+<script async src="//"></script>
+<ins class="adsbygoogle"
+    style="display:inline-block;width:728px;height:90px"
+    data-ad-client="ca-pub-1427285012511234"
+    data-ad-slot="4945571908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+                <br>
+        </center>
+    </div>
+<!--<div id="adsBottom" style="z-index: 200;display:block;">
+    <div id="adsBottomInner">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>                  
+            <ins class="adsbygoogle"        
+                 style="display:inline-block;width:728px;height:90px;"      
+                 data-ad-client="ca-pub-5030151883109940"       
+                 data-ad-slot="4554306315"></ins>       
+            <script>        
+            (adsbygoogle = window.adsbygoogle || []).push({});      
+            </script>
+    </div>
+</div>
+-->
+</div>
+<div id="warning" style="display: none;position: absolute; left: 0; right:0; bottom:0; top: 0; z-index: 9999; background-color: rgba(0,0,0,0.5);"><div style="width: 376px; background-color: #FFFFFF; margin: 150px auto; border-radius: 15px; padding: 20px 20px 20px 20px;"><center>Server Message<hr><span id="servermsg">Msg</span><div class="progress-wrap2 progress2" data-progress-percent="100"><div class="progress-bar2 progress2"></div></div><hr></center></div></div>
+<div id="dispconn" style="position: absolute; left: 0px; right: 0px; bottom: 0px; top: 0px; z-index: 9999; display: none; background-color: rgba(0, 0, 0, 0.498039);"><div style="width: 376px; margin: 150px auto; border-radius: 15px; padding: 20px 20px 20px 20px;"><center><hr>Connecting...<hr></center></div></div>
+
+<!-- // Main Game Canvas // -->
+<canvas id="canvas" width="1600" height="412"></canvas>
+
+
+<input type="text" id="chtbox" maxlength="150" placeholder="Enter to Chat">
+<div style="font-family:'Ubuntu'">&nbsp;</div>
+
+<script>
+var gmselect = 0;
+var gm = "cellcraft.io:4041";
+var img = "craft";
+var con = "NA";
+function getGameMode(a) {
+if (a == "add") { 
+    gmselect++; 
+} else if (a == "remove") {
+ gmselect--; 
+} else { 
+    console.log("ERROR"); 
+}
+console.log(gmselect);
+console.log(gmselect);
+console.log(gmselect);
+
+if (gmselect < 0) { 
+    gmselect = 10; //the last to ze right
+} else if (gmselect > 10) {
+ gmselect = 0; 
+}
+if (gmselect == 0) { 
+    gm = "cellcraft.io:4041"; 
+    img = "craft3";
+    var con = "NA";
+} else if (gmselect == 1) {
+ gm = "108.61.210.196:4041";
+ img = "scania2";
+ con = "EU";
+} else if (gmselect == 2) {
+ gm = "45.32.186.119:4041";
+ img = "AdaptAlpha";
+ con = "EU";
+} else if (gmselect == 3) {
+ gm = "104.207.146.239:4041";
+ img = "windia";
+ con = "NA";
+} else if (gmselect == 4) {
+ gm = "45.63.6.29:4041";
+ img = "athena";
+ con = "NA";
+} else if (gmselect == 5) {
+ gm = "107.191.46.131:420";
+ img = "area51";
+ con = "EU";
+} else if (gmselect == 6) {
+ gm = "104.238.174.185:4041";
+ img = "cham";
+ con = "EU";
+} else if (gmselect == 7) {
+ gm = "45.76.81.204:4041";
+ img = "connoisseur2";
+ con = "EU";
+} else if (gmselect == 8) {
+ gm = "104.238.183.31:4041";
+ img = "sparta";
+ con = "NA";
+} else if (gmselect == 9) {
+ gm = "45.32.164.199:4041";
+ img = "icePop";
+ con = "NA";
+} else if (gmselect == 10) {
+ gm = "104.238.158.53:4041";
+ img = "icePop2";
+ con = "EU";
+}
+setserver(gm);
+$('#GameDisplay').attr('src','img/' + img + '.png');
+$('#ContinentDisplay').attr('src','img/' + con + '.png');
+//$("#gmhead").html(gm.toUpperCase());
+//$("#gmdesc").html(i18n[gm + "desc"]);
+};
+</script>
+
+<script>getGameMode('remove');getGameMode('remove');getGameMode('remove');</script><script async='' charset='utf-8'>setserver('45.63.6.29:4041')</script>
+<!-- // Java Scripts // -->
+<!--
+<script type="text/javascript" charset="utf-8">
+    function popupwnd(a, b, c, d, e, l, g, h, k, f, m) {
+        - 1 == h && (h = screen.width / 2 - f / 2);
+        - 1 == k && (k = screen.height / 2 - m / 2);
+        this.open(a, '', 'toolbar=' + b + ',menubar=' + c + ',location=' + d + ',scrollbars=' + l + ',resizable=' + e + ',status=' + g + ',left=' + h + ',top=' + k + ',width=' + f + ',height=' + m)
+    }
+    $(document).ready(function(){
+        $('#scores').load('highscores.html').fadeIn(750);
+    });
+    var refreshId = setInterval( function() {
+        $('#scores').fadeOut('slow').load('highscores.html').slideDown(1500);
+    } , 150000);
+</script>
+-->
+</font>
+</font>
+<!--<div id="mappos" class="mappos" style="display: none;">x: 0 / y: 2117</div>-->
+<div id="showmenubutton" onclick="if ($('#overlays').css('display') == 'none'){$('#overlays,#toplangss').show(); show=0;}else{hide();}" class="btn btn-primary" style="position: absolute;font-size: 10px;top: 15px;left: 175px;width: 101px;"><strong>Main Menu</strong> (esc)</div>
+<div id="minimap" style="display: none;"><canvas id="mini-map" width="200px" height="200px" class="mini-map"></canvas></div>
+<!--<div id="minimapbg" class="map-bg" style="display: none;"></div>-->
+<div id="graphfps" style="width: 80px; opacity: 0.2;"></div>
+<script> 
+  //$('#minimap').show();   
+</script>
+</body>
+</html>
